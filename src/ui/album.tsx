@@ -1,18 +1,19 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+
+
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import {makeStyles} from '@material-ui/core/styles';
+import {createStyles, fade, Theme, makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import {IconButton, InputBase} from "@material-ui/core";
+import Autocomplete from "./autocomplete";
 
 function Copyright() {
     return (
@@ -27,7 +28,7 @@ function Copyright() {
     );
 }
 
-const useStyles = makeStyles((theme: { spacing: (arg0: number, arg1: number | undefined, arg2: number | undefined) => any; palette: { background: { paper: any; }; }; }) => ({
+const useStyles = makeStyles((theme: Theme) => ({
     icon: {
         marginRight: theme.spacing(2, 0, 0),
     },
@@ -42,19 +43,57 @@ const useStyles = makeStyles((theme: { spacing: (arg0: number, arg1: number | un
         paddingTop: theme.spacing(8, 0, 0),
         paddingBottom: theme.spacing(8, 0, 0),
     },
-    card: {
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
+
+    menuButton: {
+        marginRight: theme.spacing(2),
     },
-    cardMedia: {
-        paddingTop: '56.25%', // 16:9
-    },
-    cardContent: {
+    title: {
         flexGrow: 1,
+        display: 'none',
+        [theme.breakpoints.up('sm')]: {
+            display: 'block',
+        },
+    },
+    search: {
+        position: 'relative',
+        borderRadius: theme.shape.borderRadius,
+        backgroundColor: fade(theme.palette.common.white, 0.15),
+        '&:hover': {
+            backgroundColor: fade(theme.palette.common.white, 0.25),
+        },
+        marginLeft: 0,
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: theme.spacing(1),
+            width: 'auto',
+        },
+    },
+    searchIcon: {
+        width: theme.spacing(7),
+        height: '100%',
+        position: 'absolute',
+        pointerEvents: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    inputRoot: {
+        color: 'inherit',
+    },
+    inputInput: {
+        padding: theme.spacing(1, 1, 1, 7),
+        transition: theme.transitions.create('width'),
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+            width: 120,
+            '&:focus': {
+                width: 200,
+            },
+        },
     },
     footer: {
         backgroundColor: theme.palette.background.paper,
+        alignItems: 'bottom',
         padding: theme.spacing(6, 0, 0),
     },
 }));
@@ -66,32 +105,55 @@ export default function Album() {
     return (
         <React.Fragment>
             <CssBaseline/>
-            <AppBar position="relative">
+            <AppBar position="static">
                 <Toolbar>
-                    <AccessibilityNewIcon className={classes.icon}/>
-                    <Typography variant="h6" color="inherit" noWrap>
-                        Medquest Associates
+                    <IconButton
+                        edge="start"
+                        className={classes.menuButton}
+                        color="inherit"
+                        aria-label="open drawer"
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography className={classes.title} variant="h6" noWrap>
+                        Medquest Application
                     </Typography>
+                    <div className={classes.search}>
+                        <div className={classes.searchIcon}>
+                            <SearchIcon/>
+                        </div>
+                        <InputBase
+                            placeholder="Search…"
+                            classes={{
+                                root: classes.inputRoot,
+                                input: classes.inputInput,
+                            }}
+                            inputProps={{'aria-label': 'search'}}
+                        />
+                    </div>
                 </Toolbar>
             </AppBar>
+
             <main>
                 {/* Hero unit */}
                 <div className={classes.heroContent}>
                     <Container maxWidth="sm">
-                        <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                           Patient Search
+                        <Typography component="h4" variant="h4" align="center"
+                                    color="textPrimary" gutterBottom>
+                            Quick Search
                         </Typography>
 
+                        <Autocomplete/>
                         <div className={classes.heroButtons}>
                             <Grid container spacing={2} justify="center">
                                 <Grid item>
                                     <Button variant="contained" color="primary">
-                                        Main call to action
+                                        Add Patient
                                     </Button>
                                 </Grid>
                                 <Grid item>
                                     <Button variant="outlined" color="primary">
-                                        Secondary action
+                                        Edit Patient
                                     </Button>
                                 </Grid>
                             </Grid>
@@ -105,7 +167,7 @@ export default function Album() {
             <footer className={classes.footer}>
 
                 <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                   All rights reserved
+                    All rights reserved
                 </Typography>
                 <Copyright key={"xxx"}/>
             </footer>
