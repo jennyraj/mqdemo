@@ -24,11 +24,9 @@ export default function FormDialogEdit() {
                 Edit Patient
             </Button>
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+                <DialogTitle id="form-dialog-title">Edit Patient</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>
-                        Edit Patient
-                    </DialogContentText>
+
                     <TextField
                         autoFocus
                         margin="dense"
@@ -55,10 +53,10 @@ export default function FormDialogEdit() {
                     />
                 </DialogContent>
                 <DialogActions>
-                    <Button  variant="contained"  onClick={handleClose} color="primary">
+                    <Button  onClick={handleClose} color="primary">
                         Cancel
                     </Button>
-                    <Button onClick={handleClose} color="primary">
+                    <Button variant="contained"   onClick={handleClose} color="primary">
                         Submit
                     </Button>
                 </DialogActions>
@@ -67,3 +65,4 @@ export default function FormDialogEdit() {
 
     );
 }
+

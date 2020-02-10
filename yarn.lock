@@ -1305,6 +1305,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/is-prop-valid@npm:0.8.6":
+  version: 0.8.6
+  resolution: "@emotion/is-prop-valid@npm:0.8.6"
+  dependencies:
+    "@emotion/memoize": "npm:0.7.4"
+  checksum: 32df87b284d6cb824e9c199cf9b368fbffbf115726f0d89b7e40b0320708631ce742e4585fc67a2a43af0282e5509cc5b4d4e8536237b9613f582cb53033ba33
+  languageName: node
+  linkType: hard
+
 "@emotion/memoize@npm:0.7.4":
   version: 0.7.4
   resolution: "@emotion/memoize@npm:0.7.4"
@@ -1329,6 +1338,34 @@ __metadata:
   version: 0.9.4
   resolution: "@emotion/sheet@npm:0.9.4"
   checksum: 49c40bbe4d6c82ab1cdd73fa448ce8eaeaa94370b05e23aa29ddce67281397ba8c14315603f3e5db38891ddc00dcf8d93f6525da6d89bc94d6e87a9686174907
+  languageName: node
+  linkType: hard
+
+"@emotion/styled-base@npm:^10.0.27":
+  version: 10.0.27
+  resolution: "@emotion/styled-base@npm:10.0.27"
+  dependencies:
+    "@babel/runtime": "npm:^7.5.5"
+    "@emotion/is-prop-valid": "npm:0.8.6"
+    "@emotion/serialize": "npm:^0.11.15"
+    "@emotion/utils": "npm:0.11.3"
+  peerDependencies:
+    "@emotion/core": ^10.0.27
+    react: ">=16.3.0"
+  checksum: b23022d58938e347838a822c93ad41c3f4422e23937b95cd0de6c4251f7d9569442d048ff5da9fc2f42b77f23241cbab148efd39b69c3d3ce12c9a0d482f46e5
+  languageName: node
+  linkType: hard
+
+"@emotion/styled@npm:^10.0.27":
+  version: 10.0.27
+  resolution: "@emotion/styled@npm:10.0.27"
+  dependencies:
+    "@emotion/styled-base": "npm:^10.0.27"
+    babel-plugin-emotion: "npm:^10.0.27"
+  peerDependencies:
+    "@emotion/core": ^10.0.27
+    react: ">=16.3.0"
+  checksum: bcaf84c9d5c6e4950f98ce8a1a7757d266694fe947dd6fe5827b64d095dc241d03a868c88c0c1789e96dec4e6c790eff76f7ad26808bec0421f03201b29f70b3
   languageName: node
   linkType: hard
 
@@ -2438,6 +2475,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "MqDemo@workspace:."
   dependencies:
+    "@emotion/styled": "npm:^10.0.27"
     "@material-ui/core": "npm:^4.9.2"
     "@material-ui/icons": "npm:^4.9.1"
     "@testing-library/jest-dom": "npm:^4.2.4"
@@ -2466,6 +2504,7 @@ __metadata:
     react-scripts: "npm:3.3.1"
     react-select: "npm:^3.0.8"
     typescript: "npm:^3.7.5"
+    yup: "npm:^0.28.1"
   languageName: unknown
   linkType: soft
 
@@ -6175,6 +6214,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fn-name@npm:~2.0.1":
+  version: 2.0.1
+  resolution: "fn-name@npm:2.0.1"
+  checksum: aa49fe2a55d313f51353999654f824b59beecea31e41a4a333592acc173db6c551d7396fb8e1d5bbdb3ae0c21112729b5dc057988debcf45ae679ca984c2dfdb
+  languageName: node
+  linkType: hard
+
 "follow-redirects@npm:^1.0.0":
   version: 1.10.0
   resolution: "follow-redirects@npm:1.10.0"
@@ -8772,7 +8818,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash-es@npm:^4.17.14":
+"lodash-es@npm:^4.17.11, lodash-es@npm:^4.17.14":
   version: 4.17.15
   resolution: "lodash-es@npm:4.17.15"
   checksum: 1176bbab181b16b114fc5bb7dd34c22c618d9f618eb8db80c3ac7a81a597c7cf9ae15c808a6264b8da32b2089541366bec0fb8acde12fd26dbe914ae49bdd268
@@ -11399,6 +11445,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"property-expr@npm:^1.5.0":
+  version: 1.5.1
+  resolution: "property-expr@npm:1.5.1"
+  checksum: 21ddc2d893ac3d67a2fae5a29444f67b098e2a5073d6c2b621e24e4b19e263297db6b028f399cee81cc77ca19be6f5f016aecfdf6fe377022584b210e79fe22b
+  languageName: node
+  linkType: hard
+
 "proxy-addr@npm:~2.0.5":
   version: 2.0.5
   resolution: "proxy-addr@npm:2.0.5"
@@ -13419,6 +13472,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"synchronous-promise@npm:^2.0.6":
+  version: 2.0.10
+  resolution: "synchronous-promise@npm:2.0.10"
+  checksum: 8d20e6bf75978f0f2946d9af9eeed4d98bbf1eda5ce4a5997d2a780fbd3842d4c9f270af62b6edcc7f61ce874db9e46b59e643d6b93eb003e76d1647e98fc78a
+  languageName: node
+  linkType: hard
+
 "table@npm:^5.2.3":
   version: 5.4.6
   resolution: "table@npm:5.4.6"
@@ -13680,6 +13740,13 @@ __metadata:
   version: 1.0.1
   resolution: "toposort-class@npm:1.0.1"
   checksum: bc9c34a4a5c288658c8833dce39836e6543185ece85e9149b0f07f763031ec2754012794229e4f955b931b3b317b73e6edd98ae8d62425d756d789d38a2766ce
+  languageName: node
+  linkType: hard
+
+"toposort@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "toposort@npm:2.0.2"
+  checksum: f19b8a27a31d31c02904f9355c88e48ab5c9735544729ba0a57ff92d51b32f7bcd8d8f174aebf24eb6f8d065837a035ea01c2c29a586f7c3aa454513f53969b8
   languageName: node
   linkType: hard
 
@@ -14794,5 +14861,20 @@ __metadata:
     y18n: "npm:^4.0.0"
     yargs-parser: "npm:^13.1.1"
   checksum: ec4786ce16563576ddbb392a940e4d411d7caed50cb4fa2466aa9e97f1edfeee065cda9361c13be21f6132991975ba4b899cb3d5acbe747d30e31f0cdf8de16a
+  languageName: node
+  linkType: hard
+
+"yup@npm:^0.28.1":
+  version: 0.28.1
+  resolution: "yup@npm:0.28.1"
+  dependencies:
+    "@babel/runtime": "npm:^7.0.0"
+    fn-name: "npm:~2.0.1"
+    lodash: "npm:^4.17.11"
+    lodash-es: "npm:^4.17.11"
+    property-expr: "npm:^1.5.0"
+    synchronous-promise: "npm:^2.0.6"
+    toposort: "npm:^2.0.2"
+  checksum: 81ae7c15d7cd0cfc1c77764e985fb503003c8f8cbed9dbba25f1d5a23884b00ed14207fcab1497ec10a18faae83f0317af3e7af181de8a1ca1d4212700b3bc72
   languageName: node
   linkType: hard
