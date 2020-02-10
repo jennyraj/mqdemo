@@ -14,6 +14,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import {IconButton, InputBase} from "@material-ui/core";
 import Autocomplete from "./autocomplete";
+import Basic from "./basic";
+import FormDialog from "./formadd";
+import FormDialogAdd from "./formadd";
+import FormDialogEdit from "./formedit";
 
 function Copyright() {
     return (
@@ -147,14 +151,10 @@ export default function Album() {
                         <div className={classes.heroButtons}>
                             <Grid container spacing={2} justify="center">
                                 <Grid item>
-                                    <Button variant="contained" color="primary">
-                                        Add Patient
-                                    </Button>
+                                    <FormDialogAdd />
                                 </Grid>
-                                <Grid item>
-                                    <Button variant="outlined" color="primary">
-                                        Edit Patient
-                                    </Button>
+                                  <Grid item>
+                                  <FormDialogEdit/>
                                 </Grid>
                             </Grid>
                         </div>
